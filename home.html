@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup form</title>
+     <!-- Optional CSS file for styling -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
+  
+    
+</head>
+
+<body>
+   
+    <!-- Front Page with Sign-In, Sign-Up, and Forgot Password -->
+    <div id="auth-container">
+        <h2>Welcome to Investment Platform</h2>
+        
+        <!-- Sign-In Section (remains unchanged) -->
+        <div id="sign-in" class="auth-section">
+            <h3>Sign In</h3>
+            <form id="signInForm">
+                <label for="signInEmail">Email:</label>
+                <input type="email" id="signInEmail" required placeholder="@gmail.com">
+                
+                <label for="signInPassword">Password:</label>
+                <input type="password" id="signInPassword" required >
+                
+                <button type="button" onclick="signIn()">Sign In</button>
+            </form>
+            <p><a href="#" onclick="toggleSection('forgotPassword')">Forgot Password?</a></p>
+            <p>New here? <a href="#" onclick="toggleSection('signUp')">Sign Up</a></p>
+        </div>
+    
+        <!-- Sign-Up Section with First Name, Last Name, and Phone Number -->
+        <div id="sign-up" class="auth-section" style="display: none;">
+            <h3>Sign Up</h3>
+            <form id="signUpForm">
+                <label for="signUpFirstName">First Name:</label>
+                <input type="text" id="signUpFirstName" required placeholder="enter first name">
+    
+                <label for="signUpLastName">Last Name:</label>
+                <input type="text" id="signUpLastName" required placeholder="enter last name">
+                
+                
+                <label for="signUpPhone">Phone Number:</label>
+                <input type="tel" id="signUpPhone" required pattern="03[0-9]{2}-[0-9]{7}" title="Please enter a valid phone number in the format 0300-1234567" placeholder="0300-1234567">
+                
+                
+                <label for="signUpEmail">Email:</label>
+                <input type="email" id="signUpEmail" required>
+                
+                <label for="signUpPassword">Password:</label>
+                <input type="password" id="signUpPassword" required>
+                
+                <button type="button" onclick="signUp()">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="toggleSection('signIn')">Sign In</a></p>
+        </div>
+    
+        <!-- Forgot Password Section (remains unchanged) -->
+        <div id="forgot-password" class="auth-section" style="display: none;">
+            <h3>Forgot Password</h3>
+            <form id="forgotPasswordForm">
+                <label for="forgotEmail">Email:</label>
+                <input type="email" id="forgotEmail" required>
+                
+                <button type="button" onclick="forgotPassword()">Reset Password</button>
+            </form>
+            <p><a href="#" onclick="toggleSection('signIn')">Back to Sign In</a></p>
+        </div>
+    </div>
+    
+    <!-- Balance Display (remains unchanged) -->
+    <div id="balance-container" style="display: none;">
+        <h3>Total Balance</h3>
+        <p id="balance">0 INR</p>
+    </div>
+    
+
+
+</body>
+</html>
